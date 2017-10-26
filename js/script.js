@@ -11,13 +11,13 @@ $(document).ready(function () {
             $('#thesis').DataTable({
                 "info": false,
                 "lengthChange": false,
-                "paging": false,
+                "paging": true,
                 "searching": true
             });
             $('#courses').DataTable({
                 "info": false,
                 "lengthChange": false,
-                "paging": false,
+                "paging": true,
                 "searching": true
             });
         } else if (document.location.href.indexOf("projects.html") > -1) {
