@@ -13,7 +13,8 @@ $(document).ready(function () {
                 "lengthChange": false,
                 "paging": true,
                 "pageLength": 5,
-                "searching": true
+                "searching": true,
+                "order": [[ 3, "desc" ]]
             });
             $('#courses').DataTable({
                 "info": false,
