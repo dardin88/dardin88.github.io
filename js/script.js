@@ -12,12 +12,14 @@ $(document).ready(function () {
                 "info": false,
                 "lengthChange": false,
                 "paging": true,
+                "pageLength": 5,
                 "searching": true
             });
             $('#courses').DataTable({
                 "info": false,
                 "lengthChange": false,
                 "paging": true,
+                "pageLength": 5,
                 "searching": true
             });
         } else if (document.location.href.indexOf("projects.html") > -1) {
