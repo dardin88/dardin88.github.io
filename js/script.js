@@ -14,7 +14,7 @@ $(document).ready(function () {
                 "paging": true,
                 "pageLength": 5,
                 "searching": true,
-                "order": [[ 3, "desc" ]]
+                "order": [[ 3, "asc" ]]
             });
             $('#courses').DataTable({
                 "info": false,
