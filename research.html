@@ -1,109 +1,140 @@
-<!DOCTYPE HTML>
-<!--
-        Miniport by HTML5 UP
-        html5up.net | @n33co
-        Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Dario Di Nucci</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!--[if lte IE 8]>
-        <script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.scrolly.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-57094101-2', 'auto');
-        ga('send', 'pageview');
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    </script>
-    <noscript>
-        <link rel="stylesheet" href="css/skel.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="css/style-desktop.css"/>
-        </noscript>
-    <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/ie/v8.css"/><![endif]-->
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="css/ie/v9.css"/><![endif]-->
-    <link rel="stylesheet" href="css/academicons.css" />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.css" rel="stylesheet">
+    <link href="css/academicons.css" rel="stylesheet" />
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
 </head>
 
-<body>
+<body id="page-top">
 
-    <div id="menu"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Dario Di Nucci</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.png" alt="">
+        </span>
+        </a>
+        <span class="d-none d-lg-block">
+            <a href="https://orcid.org/0000-0002-3861-1902" target="orcid.widget" rel="noopener noreferrer">
+                <img class="img-fluid img-orcid mx-auto mb-2 w-50" src="img/my_orcid_qrcode.png" alt=""/>
+            </a>
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.html">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="research.html">Research Interests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="publications.html">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="services.html">Professional Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="teaching.html">Teaching</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="awards.html">Awards</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="wrapper wrapperStyle">
-        <article id="research">
-            <div class="container" style="margin-top: 2%">
-                <div class="row">
-                    <div class="4u">
-                        <section class="box">
-                            <h3>Bug Prediction</h3>
-                            <p style="text-align: justify">
-                                Allocating resources for the testing and the verification of all the parts of a large software system is a cost-prohibitive task. To alleviate this issue, prediction models able to identify portions of source code more prone to contain bugs have been the object of several studies.<br/> The main research topic is the definition of accurate prediction models that, on the one hand use a suitable set of predictors able to characterize the bug-proneness of code components, and on the other hand are able to use appropriate machine learning techniques to distinguish those components affected by bug.
-                            </p>
-                        </section>
+    <div class="container-fluid p-0">
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column">
+            <div class="my-auto">
+                <h2 class="mb-2">Research Interests</h2>
+
+                <div class="card-deck mb-2">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bug Prediction</h5>
+                            <p class="card-text">Allocating resources for the testing and the verification of all the parts of a large software system is a cost-prohibitive task. To alleviate this issue, prediction models able to identify portions of source code more prone to contain bugs have been the object of several studies.<br/> The main research topic is the definition of accurate prediction models that, on the one hand use a suitable set of predictors able to characterize the bug-proneness of code components, and on the other hand are able to use appropriate machine learning techniques to distinguish those components affected by bug.</p>
+                        </div>
                     </div>
-                    <div class="4u">
-                        <section class="box">
-                            <h3>Search Based Software Testing</h3>
-                            <p style="text-align: justify">
-                                Software testing is an essential yet expensive activity in software development, therefore much research effort has been put to automate it as much as possible. Search-based software testing consists of using meta-heuristic optimizing search technique, such as genetic algorithms, to address problems in the software testing and verification and validation domain, such as regression testing optimization and automatic test data generation.<br/> The main goal of an optimization process is to guide the search toward good solutions from a potentially infinite search space, within a practical time limit.
-                            </p>
-                        </section>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Search Based Software Testing</h5>
+                            <p class="card-text">Software testing is an essential yet expensive activity in software development, therefore much research effort has been put to automate it as much as possible. Search-based software testing consists of using meta-heuristic optimizing search technique, such as genetic algorithms, to address problems in the software testing and verification and validation domain, such as regression testing optimization and automatic test data generation.<br/> The main goal of an optimization process is to guide the search toward good solutions from a potentially infinite search space, within a practical time limit.</p>
+                        </div>
                     </div>
-                    <div class="4u">
-                        <section class="box">
-                            <h3>Energy Optimization of Mobile Apps</h3>
-                            <p style="text-align: justify">
-                                Energy efficiency is a vital characteristic of any mobile app, and indeed is becoming an important factor for user satisfaction. However, optimizing the energy consumption of a mobile app is non-trivial due to the highly volatile nature of mobile execution environments and the lack of knowledge of software developers.<br/> The goal of this topic is on the one hand to build new tools able to measure the energy profile of mobile apps, and on the other hand to propose new methods and tools able to assist software developers.
-                            </p>
-                        </section>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Energy Optimization of Mobile Apps</h5>
+                            <p class="card-text">Energy efficiency is a vital characteristic of any mobile app, and indeed is becoming an important factor for user satisfaction. However, optimizing the energy consumption of a mobile app is non-trivial due to the highly volatile nature of mobile execution environments and the lack of knowledge of software developers.<br/> The goal of this topic is on the one hand to build new tools able to measure the energy profile of mobile apps, and on the other hand to propose new methods and tools able to assist software developers.</p>
+                        </div>
                     </div>
+
                 </div>
-                <div class="row">
-                    <div class="4u">
-                        <section class="box">
-                            <h3>Mining Software Repositories</h3>
-                            <p style="text-align: justify">
-                                Software repositories such as source code control systems, communications stored between project staff and monitoring systems of the defects are used to improve the management of the progress of software projects.<br/> The purpose of this branch of research is to find out how to obtain information in order to help understand the development and evolution software processes, support forecasts on software development, and plan future developments.
-                            </p>
-                        </section>
+
+                <div class="card-deck">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mining Software Repositories</h5>
+                            <p class="card-text">Software repositories such as source code control systems, communications stored between project staff and monitoring systems of the defects are used to improve the management of the progress of software projects.<br/> The purpose of this branch of research is to find out how to obtain information in order to help understand the development and evolution software processes, support forecasts on software development, and plan future developments.</p>
+                        </div>
                     </div>
-                    <div class="4u">
-                        <section class="box">
-                            <h3>Empirical Software Engineering</h3>
-                            <p style="text-align: justify">
-                                Empirical software engineering is a subdomain of software related to experiments on systems software (software products, processes and resources).<br/> This branch includes the design of experiments on software, the collection of the results, and the consequent development of laws and theories.<br/> Proponents of empirical software engineering argue that, given the nature of the software, it is possible to broaden the knowledge about it through new experiments.
-                            </p>
-                        </section>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Empirical Software Engineering</h5>
+                            <p class="card-text">Empirical software engineering is a subdomain of software related to experiments on systems software (software products, processes and resources).<br/> This branch includes the design of experiments on software, the collection of the results, and the consequent development of laws and theories.<br/> Proponents of empirical software engineering argue that, given the nature of the software, it is possible to broaden the knowledge about it through new experiments.</p>
+                        </div>
                     </div>
+                
                 </div>
+                
             </div>
-        </article>
+            
+        </section>
+
     </div>
 
-    <div id="footer"></div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
 
 </body>
 
