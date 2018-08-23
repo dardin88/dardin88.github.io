@@ -46,21 +46,15 @@
 
 <body id="page-top">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top text-left" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Dario Di Nucci</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.png" alt="">
         </span>
         </a>
-        <span class="d-none d-lg-block">
-            <a href="https://orcid.org/0000-0002-3861-1902" target="orcid.widget" rel="noopener noreferrer">
-                <img class="img-fluid img-orcid mx-auto mb-2 w-50" src="img/my_orcid_qrcode.png" alt=""/>
-            </a>
-        </span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -83,15 +77,22 @@
                 </li>
             </ul>
         </div>
+        <span class="d-none d-lg-block text-center">
+            <a href="https://orcid.org/0000-0002-3861-1902" target="orcid.widget" rel="noopener noreferrer">
+                <img class="img-fluid img-orcid mb-2 w-50" src="img/my_orcid_qrcode.png" alt=""/>
+            </a>
+        </span>
     </nav>
 
     <div class="container-fluid p-0">
 
         <section class="resume-section p-3 p-lg-5 d-flex flex-column">
             <div class="my-auto">
-                <h2 class="mb-2">Projects</h2>
+                <h2 class="mb-5">Projects</h2>
 
-                <div class="card card-horizontal my-5">
+                <h2 class="mb-2 mt-3">Current Projects</h2>
+
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">INTiMALS</h4>
                         <p class="card-text text-justify small">This project’s goal is to research and deploy novel pattern mining algorithms in an industrial prototype of an intelligent modernisation assistant for legacy software systems. The assistant pro-actively recommends software engineers source code modernisation actions by comparing their current development efforts with insights gained by treating source code repositories as data. The assistant draws its intelligence from continuously mining for previously unknown patterns in the current state and structure of the system’s source code (programming idioms, coding conventions, library usage protocols) and in changes made to this code (systematic edits, repetitive changes). The proposed modernisation actions appear increasingly informed as the recommendation assistant uncovers and refines more patterns in the code, version and change repositories it mines. The success of the modernisation assistant hinges on the quality of the pattern mining algorithms it incorporates and their ability to improve their results by learning from their interaction with the software engineers.</p>
@@ -99,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="card card-horizontal my-5">
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">aDoctor</h4>
                         <p class="card-text text-justify small">aDoctor is a tool able to identify 15 Android-specific code smells from the catalogue by Reimann et al. It is built on top of the Eclipse Java Development Toolkit (JDT)<br/> aDoctor is released under MIT license.</p>
@@ -107,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="card card-horizontal my-5">
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">PETrA</h4>
                         <p class="card-text text-justify small">PETrA is a software able to estimate the energy consumption of method calls in Android apps. It is based on some Android tools that are Monkey, Batterystats, Systrace, and dmtracedump.</p>
@@ -115,7 +116,7 @@
                     </div>
                 </div>
                 
-                <div class="card card-horizontal my-5">
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">Landfill</h4>
                         <p class="card-text text-justify small">Landfill is a Web-based platform for sharing code smell datasets. It also provides a set of APIs for programmatically accessing its data. Anyone can contribute by: improving existing datasets or sharing and posting new datasets.</p>
@@ -123,9 +124,9 @@
                     </div>
                 </div>
 
-                <h2 class="mb-2">Past Projects</h2>
+                <h2 class="mb-2 mt-3">Past Projects</h2>
                 
-                <div class="card card-horizontal my-5">
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">Gnome Maps</h4>
                         <p class="card-text text-justify small">Gnome Maps is a map application for GNOME.
@@ -133,7 +134,7 @@
                     </div>
                 </div>
                 
-                <div class="card card-horizontal my-5">
+                <div class="card card-horizontal mb-2">
                     <div class="card-body">
                         <h4 class="card-title">GraphHopper</h4>
                         <p class="card-text text-justify small">GraphHopper offers memory efficient algorithms in Java for routing on graphs. E.g. Dijkstra and A* but also optimized road routing algorithms like Contraction Hierarchies. It stands under the Apache License and is build on a large test suite.
