@@ -125,7 +125,23 @@ h5 {
   flex: 1;
 }
 
-/* Timeline Card */
+/* Timeline Container and Cards */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  z-index: 1;
+}
+
 .timeline-card {
   position: relative;
   padding-left: 2rem;
@@ -135,17 +151,6 @@ h5 {
 .timeline-card::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-
-.timeline-card::after {
-  content: '';
-  position: absolute;
   left: -6px;
   top: 1rem;
   width: 16px;
@@ -153,6 +158,11 @@ h5 {
   background: var(--gradient-primary);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--bg-card);
+  z-index: 2;
+}
+
+.timeline-card:last-child {
+  margin-bottom: 0;
 }
 
 /* Social Icons */
@@ -773,6 +783,17 @@ a:hover, a:focus, a:active {
   
   .timeline-card {
     padding-left: 1.5rem;
+  }
+  
+  .timeline-card::before {
+    left: -4px;
+    width: 12px;
+    height: 12px;
+    top: 0.75rem;
+  }
+  
+  .timeline-container::before {
+    width: 3px;
   }
   
   section.resume-section .container-fluid {
