@@ -109,6 +109,21 @@ h5 {
   margin-right: 0 !important;
 }
 
+/* Limit teaching card width to match publications/services */
+body[data-page="teaching"] .modern-card,
+.teaching-section .modern-card {
+  max-width: 800px !important;
+  min-width: auto !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Ensure teaching page years are right-aligned */
+body[data-page="teaching"] .text-end,
+body[data-page="teaching"] .text-end span {
+  text-align: right !important;
+}
+
 .modern-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
@@ -1000,11 +1015,4 @@ html {
 
 .simple-item span {
   font-size: 0.875rem;
-}
-
-/* Teaching page date alignment fix */
-.text-end span {
-  text-align: right !important;
-  display: inline-block;
-  width: 100%;
 }
