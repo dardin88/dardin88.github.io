@@ -368,6 +368,18 @@ h5 {
   width: 100%;
 }
 
+#sideNav .navbar-nav .nav-item .nav-link.active {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  font-weight: 600 !important;
+  transform: translateX(5px) !important;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link.active::before {
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
 @media (min-width: 992px) {
   #sideNav {
     position: fixed;

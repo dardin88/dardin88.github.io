@@ -20,9 +20,9 @@
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#sideNav'
-  });
+  // Note: Scrollspy disabled as we're using separate pages instead of single-page sections
+  // $('body').scrollspy({
+  //   target: '#sideNav'
+  // });
 
 })(jQuery); // End of use strict
