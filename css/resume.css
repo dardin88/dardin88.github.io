@@ -32,11 +32,13 @@ body {
   background: var(--bg-light);
   font-size: 16px;
   overflow-x: hidden;
+  padding-top: 76px; /* Account for fixed navbar on mobile */
 }
 
 @media (min-width: 992px) {
   body {
     padding-left: 18rem;
+    padding-top: 0; /* Remove top padding on desktop */
   }
 }
 
@@ -451,8 +453,14 @@ h5 {
 
 /* Mobile Navigation */
 @media (max-width: 991px) {
+  body {
+    padding-top: 80px; /* Adjust for mobile navbar height */
+  }
+  
   #sideNav {
     padding: 1rem;
+    height: auto;
+    min-height: 70px;
   }
   
   #sideNav .navbar-toggler {
@@ -463,6 +471,21 @@ h5 {
   
   #sideNav .navbar-toggler:focus {
     box-shadow: none;
+  }
+}
+
+/* Fine-tune for smaller mobile screens */
+@media (max-width: 576px) {
+  body {
+    padding-top: 85px; /* Slightly more space for smaller screens */
+  }
+}
+
+/* Additional spacing for first section on mobile */
+@media (max-width: 991px) {
+  .container-fluid > section.resume-section:first-child,
+  .container-fluid > section:first-child {
+    padding-top: 2rem !important;
   }
 }
 
