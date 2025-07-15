@@ -1,5 +1,12 @@
 // Modern interactions and animations for the website
 document.addEventListener('DOMContentLoaded', function() {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+        document.body.classList.add('reduced-motion');
+    }
+
     // Add smooth scroll behavior for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -12,32 +19,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add intersection observer for fade-in animations
+    // Simplified intersection observer for fade-in animations (reduced flickering)
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.2,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains('fade-in-up')) {
                 entry.target.classList.add('fade-in-up');
-                entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                // Remove random delay to prevent flickering
+                entry.target.style.animationDelay = '0s';
             }
         });
     }, observerOptions);
 
-    // Observe all cards and sections
-    const elementsToAnimate = document.querySelectorAll('.modern-card, .timeline-card, .contact-info');
+    // Observe all cards and sections (reduced scope)
+    const elementsToAnimate = document.querySelectorAll('.modern-card');
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
 
-    // Add hover effects to social icons
+    // Simplified hover effects to reduce flickering
     const socialIcons = document.querySelectorAll('.list-social-icons a');
     socialIcons.forEach(icon => {
         icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) scale(1.1)';
+            this.style.transform = 'translateY(-2px)';
         });
         
         icon.addEventListener('mouseleave', function() {
@@ -45,19 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add parallax effect to decorative elements
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const sections = document.querySelectorAll('section.resume-section');
-        
-        sections.forEach((section, index) => {
-            const speed = 0.5 + (index * 0.1);
-            const yPos = -(scrolled * speed);
-            if (section.querySelector('::before')) {
-                section.style.transform = `translateY(${yPos}px)`;
-            }
-        });
-    });
+    // Removed parallax effect to reduce flickering and improve performance
 
     // Add loading animation to external links
     const externalLinks = document.querySelectorAll('a[target="_blank"]');
@@ -70,67 +66,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Enhanced navbar interaction
+    // Simplified navbar interaction (reduced animations)
     const navbar = document.getElementById('sideNav');
     if (navbar) {
-        // Add blur effect on scroll for mobile
+        // Simplified blur effect on scroll for mobile
+        let scrollTimeout;
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 991) {
-                const scrollTop = window.pageYOffset;
-                if (scrollTop > 50) {
-                    navbar.classList.add('backdrop-blur');
-                } else {
-                    navbar.classList.remove('backdrop-blur');
-                }
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const scrollTop = window.pageYOffset;
+                    if (scrollTop > 50) {
+                        navbar.classList.add('backdrop-blur');
+                    } else {
+                        navbar.classList.remove('backdrop-blur');
+                    }
+                }, 10);
             }
         });
     }
 
-    // Add ripple effect to buttons
+    // Simplified ripple effect to reduce flickering
     const buttons = document.querySelectorAll('.btn-modern, .list-social-icons a');
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(255, 255, 255, 0.4);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s ease-out;
-                pointer-events: none;
-                z-index: 1;
-            `;
-            
-            this.style.position = 'relative';
-            this.style.overflow = 'hidden';
-            this.appendChild(ripple);
-            
+            // Simple scale effect instead of complex ripple
+            this.style.transform = 'scale(0.95)';
             setTimeout(() => {
-                ripple.remove();
-            }, 600);
+                this.style.transform = '';
+            }, 150);
         });
     });
 
-    // Add CSS for ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple {
-            to {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Removed complex ripple animation CSS
 
     // Improve mobile menu experience
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -163,17 +131,17 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(slideStyle);
 
-    // Performance optimization: Debounce scroll events
-    let ticking = false;
+    // Optimized performance: Throttled scroll events to reduce flickering
+    let isScrolling = false;
     function updateOnScroll() {
-        // Scroll-based animations here
-        ticking = false;
+        // Minimal scroll-based updates
+        isScrolling = false;
     }
 
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(updateOnScroll);
-            ticking = true;
+        if (!isScrolling) {
+            window.requestAnimationFrame(updateOnScroll);
+            isScrolling = true;
         }
-    });
+    }, { passive: true });
 });
