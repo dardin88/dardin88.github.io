@@ -794,7 +794,9 @@ a:hover, a:focus, a:active {
   }
   
   .modern-card {
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
   }
   
   .timeline-card {
@@ -813,7 +815,21 @@ a:hover, a:focus, a:active {
   }
   
   section.resume-section .container-fluid {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
+  }
+  
+  .resume-section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  /* Better spacing for mobile content */
+  .modern-card .d-flex {
+    padding: 0.75rem 0;
+  }
+  
+  .modern-card h3 {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -995,5 +1011,52 @@ html {
   .resume-section {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+  }
+}
+
+/* iOS-specific spacing improvements */
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Add more breathing room on iOS */
+  .resume-section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .modern-card {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    padding: 1.5rem !important;
+  }
+  
+  /* Ensure content doesn't touch edges */
+  .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Additional iOS touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .resume-section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  .modern-card {
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
+    padding: 1.75rem 1.5rem !important;
+  }
+  
+  /* Improve text spacing on touch devices */
+  .modern-card h3,
+  .modern-card h4,
+  .modern-card h5 {
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Better spacing for long titles on mobile */
+  .modern-card .d-flex {
+    padding: 0.75rem 0 !important;
   }
 }
