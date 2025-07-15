@@ -955,3 +955,49 @@ html {
   margin-left: auto;
   min-width: 150px;
 }
+
+/* Service Items */
+.service-item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.service-item h5 {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.service-item .service-role {
+  font-size: 0.875rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.service-item.border-bottom {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+/* Simple List */
+.simple-list div {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.simple-list div:last-child {
+  margin-bottom: 0;
+}
+
+/* Single Item List */
+.simple-item {
+  margin-bottom: 0.2rem;
+}
+
+.simple-item span {
+  font-size: 0.875rem;
+}
