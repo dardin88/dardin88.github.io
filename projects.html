@@ -14,10 +14,9 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c203d858ce.js" crossorigin="anonymous"></script>
     <link href="img/favicon.ico" rel="icon" type="image/x-icon">
 
@@ -68,115 +67,120 @@
     <div class="container-fluid p-0">
 
         <section class="resume-section p-3 p-lg-5 d-flex flex-column">
-            <div class="my-auto">
-                <h2 class="mb-2">Current Projects</h2>
+            <div class="my-auto fade-in-up">
+                <h2 class="mb-5 gradient-text">Projects & Tools</h2>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">RECHARGE <a href="https://recharge-project.github.io" target="_blank"><i
-                                    class="fa-regular fa-globe"></i></a></h4>
-                        <h6>Funder: MIUR - PRIN: Progetti di Ricerca di Rilevante Interesse Nazionale – Bando 2022 PNRR
-                        </h6>
-                        <h6>Role: Unit Leader</h6>
-                        <p class="card-text text-justify small">Modern software systems are heterogeneous and feature
-                            different non-functional requirements. For example, smartphones have limited battery life
-                            and require software optimized to reduce energy consumption. Embedded systems often come
-                            with performance-critical requirements specifying precise time windows in which a task must
-                            be executed. Nevertheless, most issues reported during software testing are related to
-                            software crashes or incorrect system responses, while system performance degradations are
-                            often neglected. The problem is even more relevant in Continuous Integration and Deployment
-                            (CI/CD), where software is built on a dedicated infrastructure every time a change is
-                            pushed.
-                            Automated performance testing in CI/CD is still an ongoing effort. RECHARGE is a novel
-                            automated framework for automating performance testing in CI/CD pipelines
-                            leveraging static analysis and search-based algorithms.</p>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="mb-4 text-primary">Current Projects</h3>
                     </div>
                 </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">SMARTITUDE <a href="https://smartitude-project.github.io"
-                                target="_blank"><i class="fa-regular fa-globe"></i></a></h4>
-                        <h6>Funder: MIUR - PRIN: Progetti di Ricerca di Rilevante Interesse Nazionale – Bando 2022</h6>
-                        <h6>Role: Principal Investigator</h6>
-                        <p class="card-text text-justify small">Decentralized finance (DeFi) is changing finance, having
-                            prominence from the summer of 2020 with yield farming and the rise of tokens promising
-                            attractive yields to crypto traders. DeFi is based on blockchain, a decentralized,
-                            distributed digital ledger, where transactions are used to transfer cryptocurrency from one
-                            address to another and deploy and interact with blockchain smart contracts (BSC). Once
-                            passed the consensus check and written to
-                            the blockchain, a BSC and its transactions are immutable, despite programming defects,
-                            security vulnerabilities, or faulty transactions. Incorrect computations are frozen forever
-                            in the blockchain. Therefore, achieving accurate and comprehensive testing and verification
-                            of BSC failures and security vulnerabilities requires specific approaches that consider the
-                            persistent nature of code in this novel programming model.
-                            Smartitude aims to provide a comprehensive set of software engineering methods and tools to
-                            improve the BSC quality assurance by leveraging automated test case generation and formal
-                            methods.</p>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">RECHARGE</h4>
+                                <a href="https://recharge-project.github.io" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Visit
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">MIUR - PRIN 2022 PNRR</span>
+                                <span class="badge bg-secondary">Unit Leader</span>
+                            </div>
+                            <p class="card-text">Modern software systems are heterogeneous and feature different non-functional requirements. RECHARGE is a novel automated framework for automating performance testing in CI/CD pipelines leveraging static analysis and search-based algorithms.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Focus: Performance Testing, CI/CD, Search-based Algorithms</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">SMARTITUDE</h4>
+                                <a href="https://smartitude-project.github.io" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Visit
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">MIUR - PRIN 2022</span>
+                                <span class="badge bg-success">Principal Investigator</span>
+                            </div>
+                            <p class="card-text">Smartitude aims to provide a comprehensive set of software engineering methods and tools to improve the blockchain smart contract quality assurance by leveraging automated test case generation and formal methods.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Focus: Blockchain, Smart Contracts, DeFi, Testing</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <h2 class="mb-2">Previous Projects</h2>
-
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">RADON H2020 <a href="http://radon-h2020.eu/" target="_blank"><i
-                                    class="fa-regular fa-globe"></i></a></h4>
-                        <h6>Funder: European Union Horizon 2020</h6>
-                        <h6>Role: Work Package Leader</h6>
-                        <p class="card-text text-justify small">RADON aims at creating a DevOps framework to create and
-                            manage microservices-based applications that can optimally exploit serverless
-                            computing technologies. These applications will include fine-grained and independently
-                            deployable microservices that can efficiently exploit FaaS and container technologies.
-                            The RADON framework will consist of an integrated methodology and an open source toolchain,
-                            to define, evolve, and operate event-centric applications that consume serverless functions,
-                            allowing a high-degree of reuse and automation of functions, services and associated data
-                            pipelines.
-                            The end goal is to broaden the adoption of serverless computing technologies within the
-                            European software industry. The methodology will strive to tackle complexity, harmonize the
-                            abstraction and actuation of action-trigger rules, avoid FaaS lock-in, and optimize
-                            decomposition and reuse through model-based FaaS-enabled development and orchestration. </p>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4 text-primary">Previous Projects</h3>
                     </div>
                 </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">SECO-ASSIST 2018-2021 <a href="https://secoassist.github.io/"
-                                target="_blank"><i class="fa-regular fa-globe"></i></a></h4>
-                        <h6>Funder: Fonds de la Recherche Scientifique and Fonds voor Wetenschappelijk Onderzoek –
-                            Vlaanderen</h6>
-                        <h6>Role: Work Package Leader</h6>
-                        <p class="card-text text-justify small">Software ecosystems are the most promising avenue for
-                            organising the software needs of the digital era. Jointly funded by F.R.S.-FNRS and
-                            FWO-Vlaanderen, the four-year Excellence of Science Project SECO-ASSIST aims to realise a
-                            scientific breakthrough to nurture the ecosystems of the future, by providing novel software
-                            recommendation techniques that address the resilience, evolvability, heterogeneity, and
-                            social interaction. To achieve this the project partners will combine their expertise in
-                            social networks (UMONS), software testing (UAntwerpen), software reuse (VUB) and database
-                            evolution (UNamur).</p>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">RADON H2020</h4>
+                                <a href="http://radon-h2020.eu/" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Visit
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">EU Horizon 2020</span>
+                                <span class="badge bg-warning text-dark">Work Package Leader</span>
+                            </div>
+                            <p class="card-text">RADON aims at creating a DevOps framework to create and manage microservices-based applications that can optimally exploit serverless computing technologies and FaaS.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Focus: Serverless, Microservices, DevOps</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">SECO-ASSIST</h4>
+                                <a href="https://secoassist.github.io/" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Visit
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">FRS-FNRS & FWO</span>
+                                <span class="badge bg-warning text-dark">Work Package Leader</span>
+                            </div>
+                            <p class="card-text">Excellence of Science Project providing novel software recommendation techniques for software ecosystems, addressing resilience, evolvability, heterogeneity, and social interaction.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Focus: Software Ecosystems, Recommendations, Social Networks</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h4 class="card-title mb-0">INTIMALS</h4>
+                                    <a href="https://soft.vub.ac.be/intimals/" target="_blank" class="btn-modern btn-sm">
+                                        <i class="fas fa-external-link-alt me-1"></i> Visit
+                                    </a>
+                                </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">Innoviris</span>
+                                <span class="badge bg-warning text-dark">Work Package Leader</span>
+                            </div>
+                            <p class="card-text">Innoviris Project that developed an intelligent assistant that recommends source code modernization actions by mining patterns from legacy software repositories. It continuously learned from code structure and changes to improve its recommendations through advanced pattern mining algorithms.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Focus: Pattern Mining, Software Modernization, Intelligent Assistant</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">INTiMALS <a href="http://soft.vub.ac.be/intimals/" target="_blank"><i
-                                    class="fa-regular fa-globe"></i></a></h4>
-                        <h6>Funder: Innoviris</h6>
-                        <h6>Role: Work Package Leader</h6>
-                        <p class="card-text text-justify small">This project’s goal is to research and deploy novel
-                            pattern mining algorithms in an industrial prototype of an intelligent modernisation
-                            assistant for legacy software systems. The assistant pro-actively recommends software
-                            engineers source code modernisation actions by comparing their current development efforts
-                            with insights gained by treating source code repositories as data. The assistant draws its
-                            intelligence from continuously mining for previously unknown patterns in the current state
-                            and structure of the system’s source code (programming idioms, coding conventions, library
-                            usage protocols) and in changes made to this code (systematic edits, repetitive changes).
-                            The proposed modernisation actions appear increasingly informed as the recommendation
-                            assistant uncovers and refines more patterns in the code, version and change repositories it
-                            mines. The success of the modernisation assistant hinges on the quality of the pattern
-                            mining algorithms it incorporates and their ability to improve their results by learning
-                            from their interaction with the software engineers.</p>
-                    </div>
                 </div>
 
                 <h2 class="mt-5 mb-2">Tools</h2>
@@ -191,7 +195,11 @@
                             test using Truffle, Hardhat, Brownie and Forge. If needed, SuMo can also automatically spawn
                             Ganache instances to guarantee a clean-room testing environment between mutants. It is
                             released under the GPL v3.0 license.</p>
-                        <h6><a href="https://github.com/GerardoIuliano/MuSe" target="_blank">Source Code</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/GerardoIuliano/MuSe" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -202,8 +210,14 @@
                             Time Series Classification algorithms to predict the beginning of the steady-state phase at
                             run-time and dynamically halt warm-up iterations accordingly. It is released under the MIT
                             license.</p>
-                        <h6><a href="https://github.com/AntonioTrovato/AMBER" target="_blank">Source Code</a> - <a
-                                href="https://www.youtube.com/watch?v=7zOngDQ1z_k" target="_blank">Video</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/AntonioTrovato/AMBER" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=7zOngDQ1z_k" target="_blank" class="btn btn-danger btn-sm">
+                                <i class="fas fa-play me-1"></i> Video
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -216,8 +230,14 @@
                             Infrastructure-as-Code, the DevOps practice enabling management and provisioning of
                             infrastructure through the definition of machine-readable files. It is released under the
                             Apache 2.0 license.</p>
-                        <h6><a href="https://github.com/radon-h2020/radon-defuse/" target="_blank">Source Code</a> - <a
-                                href="https://www.youtube.com/watch?v=37mmLdCX3jU/" target="_blank">Video</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/radon-h2020/radon-defuse/" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=37mmLdCX3jU/" target="_blank" class="btn btn-danger btn-sm">
+                                <i class="fas fa-play me-1"></i> Video
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -229,9 +249,14 @@
                             prediction.RepoMiner automatically collects failure data from software components, labels
                             them as failure-prone or neutral, and calculates metrics to be used as ground truth for
                             defect prediction models. It is released under the Apache 2.0 license.</p>
-                        <h6><a href="https://github.com/radon-h2020/radon-repository-miner" target="_blank">Source
-                                Code</a> - <a href="https://radon-h2020.github.io/radon-repository-miner/"
-                                target="_blank">Documentation</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/radon-h2020/radon-repository-miner" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                            <a href="https://radon-h2020.github.io/radon-repository-miner/" target="_blank" class="btn btn-info btn-sm">
+                                <i class="fas fa-book me-1"></i> Documentation
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -243,9 +268,14 @@
                             it could be easily extended to support additional formats. AnsibleMetrics represents a step
                             forward towards software quality support for DevOps engineers developing and maintaining
                             infrastructure code. It is released under the Apache 2.0 license.</p>
-                        <h6><a href="https://github.com/radon-h2020/radon-ansible-metrics" target="_blank">Source
-                                Code</a> - <a href="https://radon-h2020.github.io/radon-ansible-metrics"
-                                target="_blank">Documentation</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/radon-h2020/radon-ansible-metrics" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                            <a href="https://radon-h2020.github.io/radon-ansible-metrics" target="_blank" class="btn btn-info btn-sm">
+                                <i class="fas fa-book me-1"></i> Documentation
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -255,9 +285,11 @@
                         <p class="card-text text-justify small">SoCRATES is an IntelliJ IDEA plugin to detect test
                             smells in Scala/SBT projects. It automatically detects and reports on six test smells
                             including four variants of General Fixture. It is released under the MIT license.</p>
-                        <h6><a href="https://github.com/jonas-db/socrates" target="_blank">Source
-                                Code</a></h6>
-                        </p>
+                        <div class="mt-3">
+                            <a href="https://github.com/jonas-db/socrates" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -267,9 +299,17 @@
                         <p class="card-text text-justify small">aDoctor is an IntellJ IDEA plugin to detect and refactor
                             five Android-specific code smells that impact the energy consumption of these applications.
                             It is released under the MIT license.</p>
-                        <h6><a href="https://plugins.jetbrains.com/plugin/13443-adoctor" target="_blank">Plugin</a> - <a
-                                href="https://github.com/emaiannone/aDoctor" target="_blank">Source Code</a> - <a
-                                href="https://www.youtube.com/watch?v=1c2EhVXiKis" target="_blank">Video</a></h6>
+                        <div class="mt-3">
+                            <a href="https://plugins.jetbrains.com/plugin/13443-adoctor" target="_blank" class="btn btn-success btn-sm me-2">
+                                <i class="fas fa-plug me-1"></i> Plugin
+                            </a>
+                            <a href="https://github.com/emaiannone/aDoctor" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Source Code
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=1c2EhVXiKis" target="_blank" class="btn btn-danger btn-sm">
+                                <i class="fas fa-play me-1"></i> Video
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -279,42 +319,129 @@
                         <p class="card-text text-justify small">PETrA is a software able to estimate the energy
                             consumption of method calls in Android apps. It is based on some Android tools that are
                             Monkey, Batterystats, Systrace, and dmtracedump.</p>
-                        <h6><a href="https://github.com/dardin88/PETrA" target="_blank">Repo</a> - <a
-                                href="https://www.youtube.com/watch?v=1rrFPDMIBbI" target="_blank">Video</a></h6>
+                        <div class="mt-3">
+                            <a href="https://github.com/dardin88/PETrA" target="_blank" class="btn btn-primary btn-sm me-2">
+                                <i class="fab fa-github me-1"></i> Repo
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=1rrFPDMIBbI" target="_blank" class="btn btn-danger btn-sm">
+                                <i class="fas fa-play me-1"></i> Video
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">Landfill</h4>
-                        <p class="card-text text-justify small">Landfill is a code smell dataset.</p>
-                        <h6><a href="https://zenodo.org/records/6080422" target="_blank">Data</a></h6>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4 text-primary">Tools & Software</h3>
                     </div>
                 </div>
 
-                <h2 class="mt-5 mb-2">Tools I contributed to</h2>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">MuSe</h4>
+                                <a href="https://github.com/GerardoIuliano/MuSe" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fab fa-github me-1"></i> Source
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-2">Mutation Testing</span>
+                                <span class="badge bg-info text-dark">GPL v3.0</span>
+                            </div>
+                            <p class="card-text">MuSe is a mutation-based tool for generating benchmarks by injecting vulnerabilities into smart contracts. Features six mutation operators and works with Truffle, Hardhat, Brownie and Forge.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Tech: Solidity, NodeJS, Smart Contracts</small>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">Gnome Maps <a href="https://wiki.gnome.org/Apps/Maps" target="_blank"><i
-                                    class="fa-regular fa-globe"></i></a></h4>
-                        <p class="card-text text-justify small">Gnome Maps is a map application for GNOME.</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">SuMo</h4>
+                                <a href="https://github.com/GerardoIuliano/SuMo" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fab fa-github me-1"></i> Source
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-2">Testing Framework</span>
+                                <span class="badge bg-info text-dark">GPL v3.0</span>
+                            </div>
+                            <p class="card-text">SuMo is a mutation testing tool designed for Solidity projects in NodeJS environments, supporting multiple testing frameworks and clean-room environments.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Tech: JavaScript, Solidity, Testing</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">Landfill</h4>
+                                <a href="https://zenodo.org/records/6080422" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-database me-1"></i> Dataset
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-2">Dataset</span>
+                                <span class="badge bg-success">Code Smells</span>
+                            </div>
+                            <p class="card-text">Landfill is a comprehensive code smell dataset for empirical software engineering research and code quality analysis.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Research: Code Quality, Empirical Studies</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card card-horizontal mb-2">
-                    <div class="card-body">
-                        <h4 class="card-title">GraphHopper <a href="https://graphhopper.com" target="_blank"><i
-                                    class="fa-regular fa-globe"></i></a></h4>
-                        <p class="card-text text-justify small">GraphHopper offers memory efficient algorithms in Java
-                            for routing on graphs. E.g. Dijkstra and A* but also optimized road routing algorithms like
-                            Contraction Hierarchies. It stands under the Apache License and is build on a large test
-                            suite.</p>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4 text-primary">Open Source Contributions</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">GNOME Maps</h4>
+                                <a href="https://wiki.gnome.org/Apps/Maps" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Project
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">GNOME</span>
+                                <span class="badge bg-secondary">Contributor</span>
+                            </div>
+                            <p class="card-text">Map application for GNOME desktop environment, providing location services and navigation functionality for Linux users.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Tech: GTK, JavaScript, GIS</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="modern-card h-100">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h4 class="card-title mb-0">GraphHopper</h4>
+                                <a href="https://graphhopper.com" target="_blank" class="btn-modern btn-sm">
+                                    <i class="fas fa-external-link-alt me-1"></i> Project
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">Routing Engine</span>
+                                <span class="badge bg-secondary">Contributor</span>
+                            </div>
+                            <p class="card-text">Memory efficient routing algorithms in Java for graph-based navigation. Includes Dijkstra, A*, and optimized road routing with Contraction Hierarchies.</p>
+                            <div class="mt-auto">
+                                <small class="text-muted">Tech: Java, Algorithms, Apache License</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
-
         </section>
 
     </div>
@@ -328,6 +455,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+    <script src="js/modern-interactions.js"></script>
 
 </body>
 
