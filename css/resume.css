@@ -97,6 +97,16 @@ h5 {
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  width: 100% !important;
+  display: block !important;
+  float: none !important;
+  clear: both !important;
+  box-sizing: border-box !important;
+  max-width: none !important;
+  min-width: 100% !important;
+  min-height: 200px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .modern-card:hover {
@@ -224,6 +234,43 @@ h5 {
 /* Override text-dark for warning badges to use white text */
 .badge.bg-warning.text-dark {
   color: white !important;
+}
+
+/* Teaching page badge styles */
+.modern-card .badge {
+  min-width: 120px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  text-align: center;
+}
+
+.modern-card .badge.small {
+  min-width: 200px;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  white-space: normal;
+  height: auto;
+  padding: 0.4rem 0.6rem;
+}
+
+.modern-card .text-end {
+  min-width: 150px;
+  text-align: right !important;
+  margin-left: auto;
+  padding-left: 1rem;
+}
+
+.modern-card .d-flex {
+  gap: 1rem;
+}
+
+.modern-card .flex-grow-1 {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Modern Form Elements */
@@ -617,6 +664,58 @@ a:hover, a:focus, a:active {
   margin: 2rem 0;
 }
 
+/* Prevent column layout for card containers */
+.col-12, .container-fluid, .resume-section-content {
+  column-count: initial !important;
+  column-width: initial !important;
+  columns: initial !important;
+}
+
+/* Ensure all card containers have same width */
+.col-12 {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 100% !important;
+  flex: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure all rows have same width */
+.row {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: none !important;
+}
+
+/* Force container to use full width */
+.container-fluid {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  max-width: none !important;
+}
+
+.resume-section {
+  max-width: none !important;
+}
+
+/* Override Bootstrap max-width constraints */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: none !important;
+}
+
+/* Ensure section content uses full width */
+.resume-section-content {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Ensure cards always stack vertically */
+.modern-card + .modern-card {
+  margin-top: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
   h1 {
@@ -706,6 +805,10 @@ html {
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #ddd;
+    width: 100% !important;
+    display: block !important;
+    float: none !important;
+    clear: both !important;
   }
   
   .list-social-icons {
