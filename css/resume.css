@@ -779,60 +779,6 @@ a:hover, a:focus, a:active {
   margin-top: 2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 767px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-  }
-  
-  .modern-card {
-    padding: 1.75rem 1.5rem;
-    margin-left: 0.75rem !important;
-    margin-right: 0.75rem !important;
-  }
-  
-  .timeline-card {
-    padding-left: 1.5rem;
-  }
-  
-  .timeline-card::before {
-    left: -4px;
-    width: 12px;
-    height: 12px;
-    top: 0.75rem;
-  }
-  
-  .timeline-container::before {
-    width: 3px;
-  }
-  
-  section.resume-section .container-fluid {
-    padding: 0 1.25rem;
-  }
-  
-  .resume-section {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-  
-  /* Better spacing for mobile content */
-  .modern-card .d-flex {
-    padding: 0.75rem 0;
-  }
-  
-  .modern-card h3 {
-    margin-bottom: 1.5rem;
-  }
-}
-
 /* Loading Animation */
 @keyframes pulse {
   0%, 100% {
@@ -945,118 +891,67 @@ html {
   }
 }
 
-/* iOS-specific optimizations to reduce flickering */
-@supports (-webkit-overflow-scrolling: touch) {
-  * {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-  }
+/* Simplified mobile/iOS optimizations */
+@media (max-width: 767px) {
+  /* Mobile typography */
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
   
+  /* Mobile spacing */
   .modern-card {
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    margin: 1rem 0.75rem;
+    padding: 1.75rem 1.5rem;
   }
   
-  .fade-in-up {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  
-  /* Disable transitions on iOS for smoother performance */
-  .modern-card,
-  .btn,
-  .nav-link,
-  .list-social-icons a {
-    transition: none !important;
-    -webkit-transition: none !important;
-  }
-}
-
-/* Additional iOS performance optimizations */
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  /* Simplify shadows on high-DPI iOS devices */
-  .modern-card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: none !important;
-  }
-  
-  /* Reduce gradient complexity */
-  .gradient-text {
-    background: var(--primary-color) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-  }
-  
-  /* Simplify button gradients */
-  .btn-modern,
-  .list-social-icons a {
-    background: var(--primary-color) !important;
-  }
-}
-
-/* Force iOS Safari to use hardware acceleration properly */
-@supports (-webkit-overflow-scrolling: touch) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .resume-section {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-  }
-}
-
-/* iOS-specific spacing improvements */
-@supports (-webkit-overflow-scrolling: touch) {
-  /* Add more breathing room on iOS */
-  .resume-section {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  .modern-card {
-    margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
-    padding: 1.5rem !important;
-  }
-  
-  /* Ensure content doesn't touch edges */
-  .container-fluid {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
-}
-
-/* Additional iOS touch optimizations */
-@media (hover: none) and (pointer: coarse) {
   .resume-section {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
   
-  .modern-card {
-    margin-left: 0.75rem !important;
-    margin-right: 0.75rem !important;
-    padding: 1.75rem 1.5rem !important;
+  section.resume-section .container-fluid {
+    padding: 0 1.25rem;
   }
   
-  /* Improve text spacing on touch devices */
+  /* Timeline adjustments */
+  .timeline-card {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-card::before {
+    left: -4px;
+    width: 12px;
+    height: 12px;
+    top: 0.75rem;
+  }
+  
+  .timeline-container::before {
+    width: 3px;
+  }
+  
+  /* Disable animations on mobile for better performance */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .modern-card:hover {
+    transform: none !important;
+  }
+  
+  /* Better spacing for mobile content */
   .modern-card h3,
   .modern-card h4,
   .modern-card h5 {
-    margin-bottom: 1.25rem !important;
+    margin-bottom: 1.25rem;
   }
   
-  /* Better spacing for long titles on mobile */
   .modern-card .d-flex {
-    padding: 0.75rem 0 !important;
+    padding: 0.75rem 0;
   }
 }

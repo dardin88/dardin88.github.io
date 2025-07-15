@@ -1,24 +1,14 @@
 // Modern interactions and animations for the website
 document.addEventListener('DOMContentLoaded', function() {
-    // Check for iOS devices
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    if (prefersReducedMotion || isIOS) {
+    if (prefersReducedMotion) {
         document.body.classList.add('reduced-motion');
-        // Disable all animations on iOS to prevent flickering
-        const style = document.createElement('style');
-        style.textContent = `
-            .fade-in-up { animation: none !important; opacity: 1 !important; transform: none !important; }
-            * { transition: none !important; -webkit-transition: none !important; }
-        `;
-        document.head.appendChild(style);
-        return; // Exit early for iOS devices
+        return; // Exit early if user prefers reduced motion
     }
 
-    // Add smooth scroll behavior for navigation links (only on non-iOS)
+    // Add smooth scroll behavior for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -30,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Simplified intersection observer for fade-in animations (reduced flickering)
+    // Intersection observer for fade-in animations
     const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px 0px -20px 0px'
@@ -40,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('fade-in-up')) {
                 entry.target.classList.add('fade-in-up');
-                // Remove random delay to prevent flickering
                 entry.target.style.animationDelay = '0s';
             }
         });
