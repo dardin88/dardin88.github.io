@@ -149,6 +149,12 @@ h5 {
   justify-content: center;
   gap: 1rem;
   margin: 2rem 0;
+  list-style: none !important;
+  padding-left: 0;
+}
+
+.list-social-icons li {
+  list-style: none;
 }
 
 .list-social-icons a {
