@@ -334,6 +334,11 @@ h5 {
   backdrop-filter: blur(20px);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-xl);
+  /* Prevent flickering on iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -461,16 +466,31 @@ h5 {
     padding: 1rem;
     height: auto;
     min-height: 70px;
+    /* Additional iOS optimizations */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+  
+  /* Reduce transitions on mobile to prevent flickering */
+  #sideNav .navbar-nav .nav-item .nav-link {
+    transition: none;
+  }
+  
+  #sideNav .navbar-nav .nav-item .nav-link::before {
+    transition: none;
   }
   
   #sideNav .navbar-toggler {
     border: none;
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius);
+    -webkit-tap-highlight-color: transparent;
   }
   
   #sideNav .navbar-toggler:focus {
     box-shadow: none;
+    outline: none;
   }
 }
 
@@ -478,6 +498,12 @@ h5 {
 @media (max-width: 576px) {
   body {
     padding-top: 85px; /* Slightly more space for smaller screens */
+  }
+  
+  /* Disable all transitions on small screens for better performance */
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
   }
 }
 
