@@ -1001,3 +1001,10 @@ html {
 .simple-item span {
   font-size: 0.875rem;
 }
+
+/* Teaching page date alignment fix */
+.text-end span {
+  text-align: right !important;
+  display: inline-block;
+  width: 100%;
+}
