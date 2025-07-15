@@ -283,22 +283,6 @@ h5 {
   padding: 0.4rem 0.6rem;
 }
 
-.modern-card .text-end {
-  min-width: 150px;
-  text-align: right !important;
-  margin-left: auto;
-  padding-left: 1rem;
-}
-
-.modern-card .d-flex {
-  gap: 1rem;
-}
-
-.modern-card .flex-grow-1 {
-  flex: 1;
-  min-width: 0;
-}
-
 /* Modern Form Elements */
 .form-control {
   border: 2px solid rgba(102, 126, 234, 0.1);
@@ -954,4 +938,20 @@ html {
   .modern-card .d-flex {
     padding: 0.75rem 0;
   }
+}
+
+/* Award Items */
+.award-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.award-item span:last-child {
+  text-align: right;
+  margin-left: auto;
+  min-width: 150px;
 }
