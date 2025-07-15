@@ -1,13 +1,24 @@
 // Modern interactions and animations for the website
 document.addEventListener('DOMContentLoaded', function() {
+    // Check for iOS devices
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || isIOS) {
         document.body.classList.add('reduced-motion');
+        // Disable all animations on iOS to prevent flickering
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in-up { animation: none !important; opacity: 1 !important; transform: none !important; }
+            * { transition: none !important; -webkit-transition: none !important; }
+        `;
+        document.head.appendChild(style);
+        return; // Exit early for iOS devices
     }
 
-    // Add smooth scroll behavior for navigation links
+    // Add smooth scroll behavior for navigation links (only on non-iOS)
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {

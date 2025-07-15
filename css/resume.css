@@ -114,6 +114,22 @@ h5 {
   box-shadow: var(--shadow-xl);
 }
 
+/* Disable hover effects on iOS to prevent flickering */
+@media (hover: none) and (pointer: coarse) {
+  .modern-card:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  
+  .list-social-icons a:hover {
+    transform: none !important;
+  }
+  
+  .btn:hover {
+    transform: none !important;
+  }
+}
+
 /* Card header with better button positioning */
 .modern-card .d-flex.align-items-start {
   align-items: center !important;
@@ -910,5 +926,74 @@ html {
 @media (min-width: 992px) {
   .resume-section.p-3.p-lg-5 {
     padding-top: 5rem !important;
+  }
+}
+
+/* iOS-specific optimizations to reduce flickering */
+@supports (-webkit-overflow-scrolling: touch) {
+  * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+  
+  .modern-card {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .fade-in-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable transitions on iOS for smoother performance */
+  .modern-card,
+  .btn,
+  .nav-link,
+  .list-social-icons a {
+    transition: none !important;
+    -webkit-transition: none !important;
+  }
+}
+
+/* Additional iOS performance optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  /* Simplify shadows on high-DPI iOS devices */
+  .modern-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+  }
+  
+  /* Reduce gradient complexity */
+  .gradient-text {
+    background: var(--primary-color) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* Simplify button gradients */
+  .btn-modern,
+  .list-social-icons a {
+    background: var(--primary-color) !important;
+  }
+}
+
+/* Force iOS Safari to use hardware acceleration properly */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .resume-section {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
