@@ -873,3 +873,42 @@ html {
     display: none;
   }
 }
+
+/* Full Width Layout Override - Apply to all pages */
+.resume-section .row .col-12 {
+  max-width: none !important;
+  width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+.resume-section .modern-card {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Ensure sections use full available width within body constraints */
+.resume-section {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Preserve Bootstrap container behavior but remove max-width constraints */
+.container-fluid {
+  max-width: none !important;
+}
+
+/* Override any Bootstrap container max-width constraints */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: none !important;
+}
+
+/* Ensure sections maintain proper spacing */
+.resume-section.p-3.p-lg-5 {
+  padding-top: 3rem !important;
+}
+
+@media (min-width: 992px) {
+  .resume-section.p-3.p-lg-5 {
+    padding-top: 5rem !important;
+  }
+}
