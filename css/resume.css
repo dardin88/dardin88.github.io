@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-light);
@@ -43,7 +43,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: inherit;
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
@@ -243,8 +243,10 @@ body[data-page="teaching"] .text-end span {
   background: var(--gradient-secondary);
 }
 
-.list-social-icons a i {
-  font-size: 1.25rem;
+.list-social-icons a .icon,
+.list-social-icons a .icon-text {
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 /* Modern Badge Styles */
