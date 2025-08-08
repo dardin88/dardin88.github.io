@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (prefersReducedMotion) {
         document.body.classList.add('reduced-motion');
-        return; // Exit early if user prefers reduced motion
+        // Don't return: still enable basic, non-animated behaviors like offset scrolling
     }
 
     // Add smooth scroll behavior for internal links and collapse mobile menu on nav clicks
@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function normalizePath(p) {
         // Ensure trailing slash for index.html and collapse duplicate slashes
         return p.replace(/\\+/g, '/').replace(/\/index\.html$/i, '/');
+    }
+
+    function getHeaderOffset() {
+        const header = document.querySelector('.navbar.fixed-top, #sideNav');
+        let offset = 0;
+        if (header) {
+            const styles = window.getComputedStyle(header);
+            if (styles.position === 'fixed') {
+                offset = header.offsetHeight || 0;
+            }
+        }
+        // small extra spacing
+        return offset + 8;
     }
 
     navLinks.forEach(link => {
@@ -43,10 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = document.querySelector(hash);
                 if (target) {
                     e.preventDefault();
+                    const top = window.pageYOffset + target.getBoundingClientRect().top - getHeaderOffset();
                     if (prefersReducedMotion) {
-                        target.scrollIntoView();
+                        window.scrollTo(0, Math.max(0, top));
                     } else {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
                     }
                 }
             }

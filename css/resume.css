@@ -102,20 +102,17 @@ h5 {
   float: none !important;
   clear: both !important;
   box-sizing: border-box !important;
-  max-width: none !important;
-  min-width: 100% !important;
   min-height: 200px;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-/* Limit teaching card width to match publications/services */
+/* Teaching page cards: allow full available width */
 body[data-page="teaching"] .modern-card,
 .teaching-section .modern-card {
-  max-width: 800px !important;
-  min-width: auto !important;
+  max-width: none !important;
   margin-left: 0 !important;
-  margin-right: auto !important;
+  margin-right: 0 !important;
 }
 
 /* Ensure teaching page years are right-aligned */
@@ -861,6 +858,8 @@ html {
 .resume-section .modern-card {
   max-width: none !important;
   width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* Ensure sections use full available width within body constraints */
