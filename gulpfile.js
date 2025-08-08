@@ -1,15 +1,23 @@
-var gulp = require('gulp');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const cleanCSS = require('gulp-clean-css');
 
-
-// Copy third party libraries from /node_modules into /vendor
-// Currently no local vendor libraries are needed (Bootstrap via CDN, no jQuery)
-gulp.task('vendor', function() {
-  return Promise.resolve();
+// Minify CSS
+gulp.task('css:minify', function() {
+  return gulp.src([
+      './css/*.css',
+      '!./css/*.min.css'
+    ])
+    .pipe(cleanCSS({
+      level: 2,
+      compatibility: 'ie8'
+    }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('./css'));
 });
-
-// (Removed) CSS build pipeline — SCSS compilation and CSS minification are no longer used.
 
 // Minify JavaScript
 gulp.task('js:minify', function() {
@@ -21,13 +29,8 @@ gulp.task('js:minify', function() {
     .pipe(rename({
       suffix: '.min'
     }))
-  .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./js'));
 });
 
-// JS
-gulp.task('js', gulp.series('js:minify'));
-
 // Default task
-gulp.task('default', gulp.series('js', 'vendor'));
-
-// (Removed) BrowserSync and dev task — live reload and SCSS watching are no longer used.
+gulp.task('default', gulp.series('css:minify', 'js:minify'));

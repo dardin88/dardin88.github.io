@@ -152,15 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.btn-modern, .list-social-icons a');
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Simple scale effect instead of complex ripple
+            // Simple scale effect
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
         });
     });
-
-    // Removed complex ripple animation CSS
 
     // Improve mobile menu experience
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -191,18 +189,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(slideStyle);
-
-    // Optimized performance: Throttled scroll events to reduce flickering
-    let isScrolling = false;
-    function updateOnScroll() {
-        // Minimal scroll-based updates
-        isScrolling = false;
-    }
-
-    window.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            window.requestAnimationFrame(updateOnScroll);
-            isScrolling = true;
-        }
-    }, { passive: true });
 });

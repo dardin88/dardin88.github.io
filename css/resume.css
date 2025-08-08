@@ -746,44 +746,42 @@ a:hover, a:focus, a:active {
   columns: initial !important;
 }
 
-/* Ensure all card containers have same width */
-.col-12 {
-  width: 100% !important;
+/* Full Width Layout - Consolidated Rules */
+.col-12,
+.row,
+.container-fluid,
+.resume-section,
+.resume-section-content,
+.resume-section .row .col-12,
+.resume-section .modern-card {
   max-width: none !important;
-  min-width: 100% !important;
+  width: 100% !important;
+}
+
+.col-12 {
   flex: none !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Ensure all rows have same width */
 .row {
-  width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  max-width: none !important;
 }
 
-/* Force container to use full width */
 .container-fluid {
   padding-left: 15px !important;
   padding-right: 15px !important;
-  max-width: none !important;
 }
 
-.resume-section {
-  max-width: none !important;
+.resume-section .modern-card {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-/* Override Bootstrap max-width constraints */
+/* Override Bootstrap container max-width constraints */
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
   max-width: none !important;
-}
-
-/* Ensure section content uses full width */
-.resume-section-content {
-  max-width: none !important;
-  width: 100% !important;
 }
 
 /* Ensure cards always stack vertically */
@@ -862,36 +860,6 @@ html {
   .list-social-icons {
     display: none;
   }
-}
-
-/* Full Width Layout Override - Apply to all pages */
-.resume-section .row .col-12 {
-  max-width: none !important;
-  width: 100% !important;
-  flex: 0 0 100% !important;
-}
-
-.resume-section .modern-card {
-  max-width: none !important;
-  width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Ensure sections use full available width within body constraints */
-.resume-section {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-/* Preserve Bootstrap container behavior but remove max-width constraints */
-.container-fluid {
-  max-width: none !important;
-}
-
-/* Override any Bootstrap container max-width constraints */
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
-  max-width: none !important;
 }
 
 /* Ensure sections maintain proper spacing */
