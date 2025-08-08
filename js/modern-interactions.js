@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Don't return: still enable basic, non-animated behaviors like offset scrolling
     }
 
+    // Dark mode is handled automatically by CSS @media (prefers-color-scheme: dark)
+
     // Add smooth scroll behavior for internal links and collapse mobile menu on nav clicks
     const navLinks = document.querySelectorAll('.nav-link, .js-scroll-trigger');
     const navbarCollapse = document.querySelector('.navbar-collapse');

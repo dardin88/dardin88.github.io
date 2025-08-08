@@ -826,7 +826,7 @@ html {
   background: var(--primary-dark);
 }
 
-/* Dark mode support (future enhancement) */
+/* Dark mode support - System preference only */
 @media (prefers-color-scheme: dark) {
   :root {
     --text-primary: #f7fafc;
@@ -834,6 +834,73 @@ html {
     --text-light: #cbd5e0;
     --bg-light: #1a202c;
     --bg-card: #2d3748;
+    --text-muted-dark: #a0aec0;
+  }
+
+  body {
+    background: var(--bg-light);
+    color: var(--text-primary);
+  }
+  
+  .text-muted {
+    color: var(--text-muted-dark) !important;
+  }
+  
+  .modern-card {
+    background: var(--bg-card) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  section.resume-section {
+    background: var(--bg-light) !important;
+  }
+  
+  section.resume-section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+  }
+  
+  .form-control {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  .form-control:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-card);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  .badge.bg-secondary {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+    color: #e2e8f0 !important;
+  }
+
+  .btn-modern.btn-sm {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .btn-modern.btn-sm:hover {
+    background: var(--gradient-primary) !important;
+    color: white !important;
   }
 }
 
