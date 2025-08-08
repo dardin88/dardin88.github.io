@@ -1,20 +1,12 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var header = require('gulp-header');
+var sassCompiler = require('sass');
+var gulpSass = require('gulp-sass');
+var sass = gulpSass(sassCompiler);
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 
-// Set the banner content
-var banner = ['/*!\n',
-  ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-  ' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-  ' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
-  ' */\n',
-  ''
-].join('');
 
 // Copy third party libraries from /node_modules into /vendor
 // Currently no local vendor libraries are needed (Bootstrap via CDN, no jQuery)
@@ -25,9 +17,7 @@ gulp.task('vendor', function() {
 // Compile SCSS
 gulp.task('css:compile', function() {
   return gulp.src('./scss/**/*.scss')
-    .pipe(sass.sync({
-      outputStyle: 'expanded'
-    }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(gulp.dest('./css'))
 });
 

@@ -126,6 +126,22 @@ body[data-page="teaching"] .text-end span {
   box-shadow: var(--shadow-xl);
 }
 
+/* Remove extra space at the bottom of cards: last child shouldn't add margin */
+.modern-card > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Common components that often appear last inside cards */
+.modern-card p:last-child,
+.modern-card ul:last-child,
+.modern-card ol:last-child,
+.modern-card .list-social-icons:last-child,
+.modern-card .btn:last-child,
+.modern-card .btn-modern:last-child,
+.modern-card .contact-info:last-child {
+  margin-bottom: 0 !important;
+}
+
 /* Disable hover effects on iOS to prevent flickering */
 @media (hover: none) and (pointer: coarse) {
   .modern-card:hover {
