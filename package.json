@@ -8,8 +8,7 @@
     "minify:js": "gulp js:minify",
     "minify:css": "gulp css:minify",
     "serve": "python3 -m http.server 8000",
-    "dev": "npm run build && npm run serve",
-    "optimize:images": "imagemin 'img/*.{png,jpg,jpeg,svg}' --plugin=pngquant --out-dir=img"
+    "dev": "npm run build && npm run serve"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
@@ -18,9 +17,7 @@
     "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^2.6.5",
-  "gulp-terser": "^2.1.0",
-  "imagemin-cli": "^8.0.0",
-  "imagemin-pngquant": "^10.0.0"
+    "gulp-terser": "^2.1.0"
   },
   "browserslist": [
     ">0.5%",
