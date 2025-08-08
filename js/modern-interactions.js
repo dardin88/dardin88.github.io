@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add smooth scroll behavior for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // Add active state animation
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
+
+            // Collapse mobile menu (Bootstrap 5 API)
+            if (navbarCollapse && navbarCollapse.classList.contains('show') && window.bootstrap && window.bootstrap.Collapse) {
+                const instance = window.bootstrap.Collapse.getInstance(navbarCollapse) || new window.bootstrap.Collapse(navbarCollapse, { toggle: false });
+                instance.hide();
+            }
         });
     });
 
@@ -58,6 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add loading animation to external links
     const externalLinks = document.querySelectorAll('a[target="_blank"]');
     externalLinks.forEach(link => {
+        // Ensure security best practice
+        const rel = (link.getAttribute('rel') || '').toLowerCase();
+        if (!rel.includes('noopener')) {
+            link.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener');
+        }
+        if (!rel.includes('noreferrer')) {
+            link.setAttribute('rel', (link.getAttribute('rel') + ' noreferrer').trim());
+        }
+
         link.addEventListener('click', function() {
             this.classList.add('loading');
             setTimeout(() => {
@@ -102,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Improve mobile menu experience
     const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
     
     if (navbarToggler && navbarCollapse) {
         navbarToggler.addEventListener('click', function() {
