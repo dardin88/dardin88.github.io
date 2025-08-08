@@ -1,11 +1,6 @@
 var gulp = require('gulp');
-var sassCompiler = require('sass');
-var gulpSass = require('gulp-sass');
-var sass = gulpSass(sassCompiler);
-var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
-var browserSync = require('browser-sync').create();
 
 
 // Copy third party libraries from /node_modules into /vendor
@@ -14,29 +9,7 @@ gulp.task('vendor', function() {
   return Promise.resolve();
 });
 
-// Compile SCSS
-gulp.task('css:compile', function() {
-  return gulp.src('./scss/**/*.scss')
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest('./css'))
-});
-
-// Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
-  return gulp.src([
-      './css/*.css',
-      '!./css/*.min.css'
-    ])
-    .pipe(cleanCSS())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./css'))
-    .pipe(browserSync.stream());
-});
-
-// CSS
-gulp.task('css', ['css:compile', 'css:minify']);
+// (Removed) CSS build pipeline — SCSS compilation and CSS minification are no longer used.
 
 // Minify JavaScript
 gulp.task('js:minify', function() {
@@ -48,28 +21,13 @@ gulp.task('js:minify', function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
-    .pipe(browserSync.stream());
+  .pipe(gulp.dest('./js'));
 });
 
 // JS
-gulp.task('js', ['js:minify']);
+gulp.task('js', gulp.series('js:minify'));
 
 // Default task
-gulp.task('default', ['css', 'js', 'vendor']);
+gulp.task('default', gulp.series('js', 'vendor'));
 
-// Configure the browserSync task
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
-});
-
-// Dev task
-gulp.task('dev', ['css', 'js', 'browserSync'], function() {
-  gulp.watch('./scss/*.scss', ['css']);
-  gulp.watch('./js/*.js', ['js']);
-  gulp.watch('./*.html', browserSync.reload);
-});
+// (Removed) BrowserSync and dev task — live reload and SCSS watching are no longer used.
