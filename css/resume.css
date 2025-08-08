@@ -236,6 +236,16 @@ body[data-page="teaching"] .text-end span {
   background: var(--gradient-secondary);
 }
 
+/* Native CSS transitions for smoother performance */
+.list-social-icons a {
+  transition: var(--transition);
+}
+
+.btn-modern,
+.nav-link {
+  transition: transform 0.15s ease;
+}
+
 .list-social-icons a .icon,
 .list-social-icons a .icon-text {
   font-size: 1.1rem;
@@ -538,6 +548,12 @@ body[data-page="teaching"] .text-end span {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: auto;
+    transition: backdrop-filter 0.3s ease;
+  }
+  
+  #sideNav.backdrop-blur {
+    backdrop-filter: blur(10px);
+    background: rgba(230, 126, 34, 0.95) !important;
   }
   
   /* Reduce transitions on mobile to prevent flickering */
