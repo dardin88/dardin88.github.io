@@ -80,13 +80,6 @@ h5 {
   font-weight: 600;
 }
 
-.subheading {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-transform: none;
-}
-
 /* Modern Card Styles */
 .modern-card {
   background: var(--bg-card);
@@ -265,25 +258,14 @@ body[data-page="teaching"] .text-end span {
   background: linear-gradient(135deg, #6c757d 0%, #495057 100%) !important;
 }
 
-.badge.bg-success {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
-}
-
 .badge.bg-warning {
   background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%) !important;
-}
-
-.badge.bg-info {
-  background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%) !important;
 }
 
 /* Badge Text Color - Ensure White Text */
 .badge.bg-primary,
 .badge.bg-secondary,
-.badge.bg-success,
-.badge.bg-warning,
-.badge.bg-info,
-.badge.bg-danger {
+.badge.bg-warning {
   color: white !important;
 }
 
@@ -311,21 +293,6 @@ body[data-page="teaching"] .text-end span {
   white-space: normal;
   height: auto;
   padding: 0.4rem 0.6rem;
-}
-
-/* Modern Form Elements */
-.form-control {
-  border: 2px solid rgba(102, 126, 234, 0.1);
-  border-radius: var(--border-radius);
-  padding: 0.75rem 1rem;
-  transition: var(--transition);
-  background: var(--bg-card);
-}
-
-.form-control:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-  background: var(--bg-card);
 }
 
 /* Reduced Animations for smoother experience */
@@ -427,29 +394,6 @@ body[data-page="teaching"] .text-end span {
   color: white;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
-}
-
-/* Project Page Button Styles - Ensure White Text */
-.btn-primary,
-.btn-danger,
-.btn-info,
-.btn-success {
-  color: white !important;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active,
-.btn-info:hover,
-.btn-info:focus,
-.btn-info:active,
-.btn-success:hover,
-.btn-success:focus,
-.btn-success:active {
-  color: white !important;
 }
 
 /* Modern Navigation */
@@ -698,13 +642,6 @@ section.resume-section .my-auto {
   color: var(--primary-color) !important;
 }
 
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -782,27 +719,13 @@ a:hover, a:focus, a:active {
 }
 
 /* Override Bootstrap container max-width constraints */
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+.container-fluid {
   max-width: none !important;
 }
 
 /* Ensure cards always stack vertically */
 .modern-card + .modern-card {
   margin-top: 2rem;
-}
-
-/* Loading Animation */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.pulse {
-  animation: pulse 2s infinite;
 }
 
 /* Scroll Behavior */
@@ -1057,10 +980,9 @@ html {
   flex-shrink: 0;
 }
 
-.service-item .service-role {
-  font-size: 0.875rem;
-  text-align: right;
-  flex-shrink: 0;
+/* Also ensure nested spans within the last span are right-aligned */
+.service-item span:last-child span {
+  text-align: right !important;
 }
 
 /* On very small screens, place the role on its own line but keep it right-aligned */
@@ -1077,17 +999,6 @@ html {
 }
 
 /* Simple List */
-.simple-list div {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.simple-list div:last-child {
-  margin-bottom: 0;
-}
-
-/* Single Item List */
 .simple-item {
   margin-bottom: 0.2rem;
 }
