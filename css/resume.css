@@ -1026,8 +1026,9 @@ html {
 /* Service Items */
 .service-item {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 0.75rem;
   gap: 1rem;
 }
@@ -1037,10 +1038,36 @@ html {
   font-size: 0.875rem;
 }
 
+/* Ensure the title takes available space and stays left-aligned */
+.service-item span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left !important;
+}
+
+/* Also ensure nested spans within the first span are left-aligned */
+.service-item span:first-child span {
+  text-align: left !important;
+}
+
+/* Ensure the role stays right-aligned */
+.service-item span:last-child {
+  margin-left: auto;
+  text-align: right;
+  flex-shrink: 0;
+}
+
 .service-item .service-role {
   font-size: 0.875rem;
   text-align: right;
   flex-shrink: 0;
+}
+
+/* On very small screens, place the role on its own line but keep it right-aligned */
+@media (max-width: 576px) {
+  .service-item span:last-child {
+    flex-basis: 100%;
+  }
 }
 
 .service-item.border-bottom {
