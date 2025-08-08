@@ -8,9 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Exit early if user prefers reduced motion
     }
 
-    // Add smooth scroll behavior for navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Add smooth scroll behavior for internal links and collapse mobile menu on nav clicks
+    const navLinks = document.querySelectorAll('.nav-link, .js-scroll-trigger');
     const navbarCollapse = document.querySelector('.navbar-collapse');
+    function normalizePath(p) {
+        // Ensure trailing slash for index.html and collapse duplicate slashes
+        return p.replace(/\\+/g, '/').replace(/\/index\.html$/i, '/');
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // Add active state animation
@@ -18,6 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
+
+            // Smooth scroll for hash links on same page
+            const rawHref = this.getAttribute('href') || '';
+            // Resolve full URL of the link to compare against current location
+            let url;
+            try {
+                url = new URL(this.href, window.location.origin);
+            } catch (_) {
+                url = null;
+            }
+
+            // Handle hash-only and same-page links like "/page#id" or "index.html#id"
+            const currentPath = normalizePath(window.location.pathname || '/');
+            const linkPath = url ? normalizePath(url.pathname) : currentPath;
+            const hash = url ? url.hash : (rawHref.startsWith('#') ? rawHref : '');
+
+            if (hash && hash.length > 1 && linkPath === currentPath && (!url || url.origin === window.location.origin)) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    e.preventDefault();
+                    if (prefersReducedMotion) {
+                        target.scrollIntoView();
+                    } else {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }
 
             // Collapse mobile menu (Bootstrap 5 API)
             if (navbarCollapse && navbarCollapse.classList.contains('show') && window.bootstrap && window.bootstrap.Collapse) {
