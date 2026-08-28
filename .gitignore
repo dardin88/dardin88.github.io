@@ -40,3 +40,4 @@ pnpm-debug.log*
 
 # Lockfiles (untracked per request)
 package-lock.json
+/.idea/.gitignore
