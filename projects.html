@@ -320,7 +320,7 @@
                                 <span class="badge bg-secondary">MIT License</span>
                             </div>
                             <p class="card-text">SoCRATES is an IntelliJ IDEA plugin that detects test smells in Scala/SBT
-                                projects. It automatically detects and reports on six test smells including four
+                                projects. It automatically detects and reports on six test smells, including four
                                 variants of General Fixture.</p>
                             <div class="mt-auto">
                                 <small class="text-muted">Focus: Test Smells, Scala, Code Quality</small>
@@ -448,7 +448,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <p class="text-muted mb-0">
-                        © <span id="current-year"></span> Dario Di Nucci
+                        ©<span id="current-year"></span> Dario Di Nucci
                     </p>
                 </div>
             </div>
@@ -467,7 +467,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const yearElement = document.getElementById('current-year');
             if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
+                yearElement.textContent = new Date().getFullYear().toString();
             }
         });
     </script>
