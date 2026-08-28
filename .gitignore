@@ -41,3 +41,10 @@ pnpm-debug.log*
 # Lockfiles (untracked per request)
 package-lock.json
 /.idea/.gitignore
+/.idea/dardin88.github.io.iml
+/.idea/jsLibraryMappings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
